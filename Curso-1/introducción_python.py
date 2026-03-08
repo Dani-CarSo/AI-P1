@@ -49,7 +49,7 @@ def rivales():
 def conclusion():  
     print( "Python es facil de aprender, enseñar, facil de utilizar, entender y de instalar")
     
-def menu():
+def main():
     while True:
      print("\n ¿Que te gustaria aprender hoy \n")
      print("1. Que es Python")
@@ -82,4 +82,4 @@ def menu():
      else:
             print("Opcion no valida, por favor seleccione una opcion del 1 al 8.")
 
-menu()
+main()
