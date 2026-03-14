@@ -1,6 +1,8 @@
 #LAB Modulo 2- Sección 3
-# Literales
+# Operadores
 # Python essentials 1
+
+print("Operadores")
 
 print("Suma")
 print(8+12)

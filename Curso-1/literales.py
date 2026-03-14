@@ -4,8 +4,8 @@
 
 print("\"I'm\"\n\"\"trying\"\"\n\"\"\"learning\"\"\"Python\"\"\"")
 
-
 print("Literales")
+
 numero = 9
 cadena="9"
 print("literalnumero:", numero)
