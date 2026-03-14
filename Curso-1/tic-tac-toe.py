@@ -2,8 +2,7 @@
 # Proyecto de módulo 3
 # Python essentials 1
 
-print("Tic Tac Toe")
-from pickle import TRUE
+
 from random import randrange
 
 tablero = [[1,2,3],
@@ -27,8 +26,8 @@ def avance(tablero):
         if move >= 1 and move <= 9:
             row = (move-1)//3
             col = (move-1)%3
-            if board[row][col] not in ['O','X']:
-                board[row][col] = 'O'
+            if tablero[row][col] not in ['O','X']:
+                tablero[row][col] = 'O'
                 ok = True
             else:
                 print("Cuadro ocupado, intenta de nuevo")
@@ -55,22 +54,43 @@ def ganador(tablero):
         return tablero[0][2]
     return False
 
+
 def movimiento_computadora(tablero):
     free = computadora(tablero)
     if len(free) > 0:
         move = randrange(len(free))
         row, col = free[move]
         tablero[row][col] = 'X'
-        while TRUE:
-            if ganador(tablero) == 'X':
-                print("¡Nimodo, te humillaron, gano la maquina!")
-                break
-            elif ganador(tablero) == 'O':
-                print("¡Felicidades, ganaste!")
-                break
-            elif len(computadora(tablero)) == 0:
-                print("¡Empate!")
-                break
-            else:
-                avance(tablero)
-                display_tablero(tablero)
+        
+    display_tablero(tablero)
+
+def reiniciar_tablero():
+    return [[1,2,3],
+            [4,'X',6],
+            [7,8,9]] 
+    
+while True:
+
+    avance(tablero)
+    display_tablero(tablero)
+
+    if ganador(tablero) == 'O':
+        print("¡Felicidades, ganaste!")
+        tablero = reiniciar_tablero()
+        display_tablero(tablero)
+        continue
+
+    if len(computadora(tablero)) == 0:
+        print("¡Empate!")
+        tablero = reiniciar_tablero()
+        display_tablero(tablero)
+        continue
+
+    movimiento_computadora(tablero)
+    display_tablero(tablero)
+
+    if ganador(tablero) == 'X':
+        print("¡Ni modo, ganó la máquina!")
+        tablero = reiniciar_tablero()
+        display_tablero(tablero)
+        continue
