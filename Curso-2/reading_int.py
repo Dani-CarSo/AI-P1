@@ -1,0 +1,21 @@
+#LAB Modulo 2- Sección 8
+#Reading int 
+# Python essentials 2
+
+def read_int(prompt, min, max):
+    while True:
+        try:
+            value = int(input(prompt))
+        except ValueError:
+            print("Error: wrong input")
+            continue
+        
+        if value < min or value > max:
+            print(f"Error: the value is not within permitted range ({min}..{max})")
+            continue
+        
+        return value
+
+
+v = read_int("Enter a number from -10 to 10: ", -10, 10)
+print("The number is:", v)
