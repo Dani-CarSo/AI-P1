@@ -1,7 +1,6 @@
 #LAB Modulo 2- Sección 5
-#Improving the Caesar cipher
+#Palindrome
 # Python essentials 2
-
 
 text = input("Enter text: ")
 
