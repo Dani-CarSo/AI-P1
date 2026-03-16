@@ -1,0 +1,20 @@
+#LAB Modulo 4- Sección 6
+#The calendar module
+# Python essentials 2
+
+import calendar
+
+class MyCalendar(calendar.Calendar):
+    def count_weekday_in_year(self, year, weekday):
+        current_month = 1
+        number_of_days = 0
+        while current_month <= 12:
+            for data in self.monthdays2calendar(year, current_month):
+                if data[weekday][0] != 0:
+                    number_of_days += 1
+            current_month += 1
+        return number_of_days
+
+my_calendar = MyCalendar()
+print(my_calendar.count_weekday_in_year(2019, calendar.MONDAY))  
+print(my_calendar.count_weekday_in_year(2000, calendar.SUNDAY)) 
